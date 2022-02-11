@@ -15,20 +15,22 @@ jobs:
         node-version: '16'
     - run: yarn install
     - run: yarn build
-
-    - name: Init new repo in dist folder and commit generated files
-      run: |
-        cd public
-        git init
-        git add -A
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git commit -m 'deploy'
-
-    - name: Force push to destination branch
-      uses: ad-m/github-push-action@v0.5.0
+    
+    - uses: azure/login@v1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: gh-pages
-        force: true
-        directory: ./public
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    - name: Upload to blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+            az storage blob upload-batch --account-name honorable-devtest-rg  --auth-mode key -d '$web' -s .
+    - name: Purge CDN endpoint
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+           az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
+    - name: logout
+      run: |
+            az logout
+      if: always()
