@@ -16,21 +16,9 @@ jobs:
     - run: yarn install
     - run: yarn build
     
-    - uses: azure/login@v1
+    - name: Deploy to Azure
+      uses: TravisSpomer/deploy-to-azure-storage@v1.4.0
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-    
-    - name: Upload to blob storage
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-            az storage blob upload-batch --account-name honorable-devtest-rg  --auth-mode key -d '$web' -s ./public
-    - name: Purge CDN endpoint
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
-    - name: logout
-      run: |
-            az logout
-      if: always()
+        source-path: build
+        sas-url: ${{ secrets.STORAGE_SAS_TOKEN }}
+        
