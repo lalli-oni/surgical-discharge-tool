@@ -15,5 +15,5 @@
 
 <div class="flex flex-col">
     <label class="text-white" for={id}>{label}</label>
-    <input type="date" id={id} on:input={dateSelected} />
+    <input type="date" id={id} on:input={dateSelected} class="bg-transparent text-white border" />
 </div>
