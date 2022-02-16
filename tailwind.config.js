@@ -4,6 +4,9 @@ module.exports = {
     extend: {
       spacing: {
         '80%': '80%'
+      },
+      boxShadow: {
+        'orange-glow': '0px 0px 20px 2px rgba(237,150,0,0.9);'
       }
     },
   },
