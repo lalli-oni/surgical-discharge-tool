@@ -1,4 +1,5 @@
 export default {
+	culture: 'en',
 	title: "Honorable",
 	subtitle: "Quickly generate text for your patient discharge reports.",
 	organ: "Organ",

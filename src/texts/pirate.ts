@@ -1,4 +1,5 @@
 export default {
+	culture: 'en',
 	title: "Honyarrrrable",
 	subtitle: "Landlubber tool for silly landlubber activities.",
 	organ: "Bits",
