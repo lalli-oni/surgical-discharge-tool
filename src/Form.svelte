@@ -16,15 +16,30 @@
     const selection = {
         organ: "heart",
         operationDate: new Date(),
+        rythms: {
+            sinusRythm: true,
+            chronicalRythm: false,
+            paroxysmalRythm: false,
+            newAFRythm: false,
+            flutterRythm: false
+        },
+        respitory: {
+            lulz: false,
+        }
     }
+
+    $: dispatch('selection-changed', selection);
 </script>
 
 <form class="flex flex-col gap-4">
     <section>
         <h2 class="text-white">{labels.organ}</h2>
-        <select name="organs" id="organ-selection" bind:value={selection.organ} class="bg-transparent text-white">
-            <option value="heart">{labels.heart}</option>
-            <option value="lungs">{labels.lungs}</option>
+        <select
+            name="organs" id="organ-selection" class="bg-transparent text-white"
+            bind:value={selection.organ}
+        >
+            <option value="heart" class="text-black">{labels.heart}</option>
+            <option value="lungs" class="text-black">{labels.lungs}</option>
         </select>
     </section>
     <section>
@@ -33,14 +48,14 @@
     </section>
     <section>
         <h2 class="text-white">{labels.rhytms.label}</h2>
-        <Checkbox label={labels.rhytms.sinus} id="sinus-rhytm" />
-        <Checkbox label={labels.rhytms.chronicalAF} id="chron-af" />
-        <Checkbox label={labels.rhytms.paroxysmalAF} id="parox-af" />
-        <Checkbox label={labels.rhytms.newAF} id="new-af" />
-        <Checkbox label={labels.rhytms.flutter} id="flutter-af" />
+        <Checkbox label={labels.rhytms.sinus} bind:checked={selection.rythms.sinusRythm} />
+        <Checkbox label={labels.rhytms.chronicalAF} bind:checked={selection.rythms.chronicalRythm} />
+        <Checkbox label={labels.rhytms.paroxysmalAF} bind:checked={selection.rythms.paroxysmalRythm}/>
+        <Checkbox label={labels.rhytms.newAF} bind:checked={selection.rythms.newAFRythm}/>
+        <Checkbox label={labels.rhytms.flutter} bind:checked={selection.rythms.flutterRythm}/>
     </section>
     <section>
         <h2 class="text-white">{labels.respitory.label}</h2>
-        <Checkbox label="No problems" id="" />
+        <Checkbox label="No problems" bind:checked={selection.respitory.lulz}/>
     </section>
 </form>
