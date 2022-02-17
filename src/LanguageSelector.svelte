@@ -2,14 +2,15 @@
 	import { createEventDispatcher } from 'svelte';
     import Svg from './svg.svelte';
     export let languages;
-    export let language = languages[0];
+    export let language = languages.english;
     let expanded: boolean = false;
     export let collapseDelay: number = 300;
 
 	const dispatch = createEventDispatcher();
 
-    const languageChanged = (event) => {
-        dispatch('language-changed', event);
+    const languageSelected = (event) => {
+        const temp = languages.find((l) => l.meta.id === event.detail);
+        if (temp) language = temp;
     };
 
     const triggerExpand = () => {
@@ -23,14 +24,22 @@
 
 
 <div
-    class="flex flex-row justify-between items-center hover:cursor-pointer gap-2 group"
+    class="flex flex-row justify-between items-center hover:cursor-pointer gap-2 group p-2"
     on:click={triggerExpand} on:mouseenter={triggerExpand} on:click={triggerExpand}
 >
     <div>
-        <Svg icon={language.svg} label={language.id} class="group-hover:shadow-orange-glow" />
-        <div hidden={!expanded} class="absolute mt-3 flex flex-col gap-1">
-            {#each languages as languageOption}
-                <Svg icon={languageOption.svg} label={languageOption.id} box={32} />
+        <Svg id="selected-language" icon={language.meta.flag} label={language.id} class="group-hover:shadow-orange-glow" 
+        boxWidth={640} boxHeight={480}
+    />
+        <div class="hidden absolute group-hover:flex mt-3 p-2 flex-col bg-brand-lighter rounded-lg">
+            {#each languages.filter(lang => lang.meta.id !== language.meta.id) as languageOption}
+                <Svg class="shadow-md hover:shadow-blue-100 m-1"
+                    icon={languageOption.meta.flag}
+                    id={languageOption.meta.id}
+                    label={languageOption.meta.id}
+                    boxWidth={640} boxHeight={480}
+                    on:svg-click={languageSelected}
+                />
             {/each}
         </div>
     </div>
@@ -38,9 +47,3 @@
         V
     </div>
 </div>
-
-<!-- <select bind:value={language} on:change={languageChanged} class="bg-transparent text-white outline-none">
-    {#each languages as language}
-        <option value={language.id}>{ @html language?.svg}</option>
-    {/each}
-</select> -->
