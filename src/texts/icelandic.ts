@@ -1,18 +1,18 @@
 export default {
 	meta: {
-		id: "english",
-		label: "English",
-		cultureKey: 'en',
-		flag: `<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-gb" viewBox="0 0 640 480"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg>`
+		id: "icelandic",
+		label: "Íslenska",
+		cultureKey: 'is',
+		flag:`<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-is" viewBox="0 0 640 480"><defs><clipPath id="is-a"><path fill-opacity=".7" d="M0 0h640v480H0z"/></clipPath></defs><g fill-rule="evenodd" stroke-width="0" clip-path="url(#is-a)"><path fill="#003897" d="M0 0h666.7v480H0z"/><path fill="#fff" d="M0 186.7h186.7V0h106.6v186.7h373.4v106.6H293.3V480H186.7V293.3H0V186.7z"/><path fill="#d72828" d="M0 213.3h213.3V0h53.4v213.3h400v53.4h-400V480h-53.4V266.7H0v-53.4z"/></g></svg>`
 	},
 	title: "Honorable",
-	subtitle: "Quickly generate text for your patient discharge reports.",
-	organ: "Organ",
-	heart: "Heart",
-	lungs: "Lungs",
+	subtitle: "Spýtir út texta fyrir útskrift (á sjúklingum, ekki menntaskólapakk!).",
+	organ: "Líffæri",
+	heart: "Hjarta",
+	lungs: "Lungu",
 	times: {
-		label: "Times",
-		dayOfOperation: "Day of operation"
+		label: "Tímar",
+		dayOfOperation: "Dagur uppskurðar"
 	},
 	rhytms: {
 		label: "Heart rhytms",
