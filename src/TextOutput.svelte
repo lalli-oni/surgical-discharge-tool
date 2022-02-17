@@ -8,6 +8,7 @@
             message = "";
         }
         else {
+            event.target.select();
             navigator.clipboard.writeText(event.target.value).then(value => {
                 message = "Successfully copied text to clipboard! Use Ctrl+V now to paste it in your report.";
             });
@@ -18,12 +19,12 @@
 </script>
 
 
-<div class="flex flex-col justify-center" on:click={textAreaClicked}>
+<div class="flex flex-col justify-center max-h-80" on:click={textAreaClicked}>
     <textarea id="text-output" name="text-output" rows="10" cols="30"
         disabled={!(text.length > 0)}
     >{text}</textarea>
     {#if message?.length > 0}
-        <div>{message}</div>
+        <div class="text-white">{message}</div>
     {/if}
 </div>
 
