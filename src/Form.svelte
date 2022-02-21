@@ -108,7 +108,7 @@
       bind:value={selection.dischargeLocation}
     >
     {#each labels.dischargeLocations.items as location}
-      <option value={location.id} class="text-black">{location.label}</option>
+      <option value={location} class="text-black">{location.label}</option>
     {/each}
     </select>
   </section>
