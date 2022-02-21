@@ -34,6 +34,22 @@ export default {
 			defibrillation: "Defibrillation",
 		}
 	},
+	dischargeLocations: {
+		label: "Discharge locations",
+		items: [{
+			id: "home",
+			label: "Home",
+		},{
+		id: "haugesund",
+			label: "Haugesund",
+		},{
+			id: "haraldsplass",
+			label: "Haraldsplass",
+		},{
+			id: "stavanger",
+			label: "Stavanger",
+		}]
+	},
 	output: {
 		pattern: "The patient had {{organ}} surgery on {{operationDate}}",
 		sinusRythm: "Post operative, the patient had an uncomplicated sinus rhythm.",
