@@ -100,6 +100,10 @@
     </section>
   {/if}
   <section>
+    <h2 class="text-white">{labels.respitory.label}</h2>
+    <Checkbox label="No problems" bind:checked={selection.respitory.lulz} />
+  </section>
+  <section>
     <h2 class="text-white">{labels.dischargeLocations.label}</h2>
     <select
       name="discharge-location"
@@ -111,9 +115,5 @@
       <option value={location} class="text-black">{location.label}</option>
     {/each}
     </select>
-  </section>
-  <section>
-    <h2 class="text-white">{labels.respitory.label}</h2>
-    <Checkbox label="No problems" bind:checked={selection.respitory.lulz} />
   </section>
 </form>
