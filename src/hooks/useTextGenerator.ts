@@ -1,9 +1,10 @@
 
+const tokenPattern = /(?:\{\{)(.+?)(?:\}\})/g;
 
 export function useTextGenerator() {
 	const generate = (selections, translation) => {
 		let text = translation.output.pattern;
-		const tokens = [...text.matchAll(/(?:\{\{)(.+?)(?:\}\})/g)];
+		const tokens = [...text.matchAll(tokenPattern)];
 		tokens.forEach(token => {
 			let value: string;
 			if (selections[token[1]] instanceof Date) {
@@ -26,6 +27,11 @@ export function useTextGenerator() {
 			if (value === true && translation.output[key]) respiratoryText += "\n- " + translation.output[key];
 		}
 		if (respiratoryText?.length > 0) text += "\n" + respiratoryText;
+
+		if (selections?.dischargeLocation?.label) {
+			text += "\n\n" + translation.output.dischargePattern.replaceAll(tokenPattern, selections.dischargeLocation.label);
+		}
+
 		return text
 	};
 	return { generate };
