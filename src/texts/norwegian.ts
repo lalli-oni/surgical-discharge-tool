@@ -58,5 +58,8 @@ export default {
 		newAFRythm: "The patient had a new onset of atrial fibrillation",
 		flutterRythm: "Shit, its fluttering!",
 		dischargePattern: "The patient was discharged to {{location}}",
+		metoprolol: "Patient was converted successfully back to sinus rhythm with Metoprolol treatment",
+		amiodarone: "Patient was converted successfully back to sinus rhythm with Amiodarone treatment",
+		defibrillation: "Pasiented had persistant WRONG rhythm and needed to be debibrillated back to sinus rhythm",
 	}
 }

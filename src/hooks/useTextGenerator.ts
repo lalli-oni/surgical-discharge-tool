@@ -22,6 +22,12 @@ export function useTextGenerator() {
 		}
 		if (rythmText?.length > 0) text += "\n" + rythmText;
 		
+		let rythmtreatmentText = "";
+		for (const [key, value] of Object.entries(selections.rythms.treatments)) {
+			if (value === true && translation.output[key]) rythmtreatmentText += "\n- " + translation.output[key];
+		}
+		if (rythmtreatmentText?.length > 0) text += "\n" + rythmtreatmentText;
+
 		let respiratoryText = "";
 		for (const [key, value] of Object.entries(selections.respitory)) {
 			if (value === true && translation.output[key]) respiratoryText += "\n- " + translation.output[key];
