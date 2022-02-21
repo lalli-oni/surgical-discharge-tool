@@ -22,7 +22,13 @@ export default {
 		// Paroxysm:  a fit, attack, or sudden increase or recurrence of symptoms (as of a disease)
 		paroxysmalAF: "Paroxysmal AF",
 		newAF: "New AF",
-		flutter: "Flutter"
+		flutter: "Flutter",
+		treatments: {
+			label: "Rhytm treatment",
+			metoprolol: "Metoprolol",
+			amiodarone: "Amiodarone",
+			defibrillation: "Defibrillation",
+		}
 	},
 	respitory: {
 		label: "Respitory",

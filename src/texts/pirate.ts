@@ -27,7 +27,13 @@ export default {
 	},
 	respitory: {
 		label: "Breath stuffs",
-		noChanges: "No problemo!"
+		noChanges: "No problemo!",
+		treatments: {
+			label: "Rhytm treatment",
+			metoprolol: "Metoprolol",
+			amiodarone: "Amiodarone",
+			defibrillation: "Defibrillation",
+		}
 	},
 	output: {
 		pattern: "The patient had {organ} surgery on ${operationDate}",
