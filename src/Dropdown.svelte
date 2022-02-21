@@ -1,5 +1,5 @@
-<script lang="ts" context="module">
-    export type DropdownOption = {
+<script lang="ts">
+    interface DropdownOption {
         id: string;
         label: string;
     };
@@ -8,8 +8,8 @@
     export let selected: DropdownOption;
 </script>
 
-<select bind:value={selected}>
+<select bind:value={selected} class="outline-none bg-transparent">
     {#each options as option}
-        <option>{option.label}</option>
+        <option class="bg-transparent">{option.label}</option>
     {/each}
 </select>

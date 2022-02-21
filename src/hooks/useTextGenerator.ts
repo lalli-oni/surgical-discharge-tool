@@ -15,13 +15,17 @@ export function useTextGenerator() {
 			text = text.replaceAll(token[0], value);
 		});
 
+		let rythmText = "";
 		for (const [key, value] of Object.entries(selections.rythms)) {
-			if (value === true && translation.output[key]) text += "\n" + translation.output[key];
+			if (value === true && translation.output[key]) rythmText += "\n- " + translation.output[key];
 		}
+		if (rythmText?.length > 0) text += "\n" + rythmText;
 		
+		let respiratoryText = "";
 		for (const [key, value] of Object.entries(selections.respitory)) {
-			if (value === true && translation.output[key]) text += "\n" + translation.output[key];
+			if (value === true && translation.output[key]) respiratoryText += "\n- " + translation.output[key];
 		}
+		if (respiratoryText?.length > 0) text += "\n" + respiratoryText;
 		return text
 	};
 	return { generate };
