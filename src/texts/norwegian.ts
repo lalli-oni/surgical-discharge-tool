@@ -56,7 +56,7 @@ export default {
 		chronicalRythm: "The patient had preoperative chronic atrial fibrillation as well as post operative. ",
 		paroxysmalRythm: "The patient had preoperative paroxysmal atrial fibrillation as well as post operative.",
 		newAFRythm: "The patient had a new onset of atrial fibrillation",
-		flutterRythm: "Shit, its fluttering!"
+		flutterRythm: "Shit, its fluttering!",
 		dischargePattern: "The patient was discharged to {{location}}",
 	}
 }
