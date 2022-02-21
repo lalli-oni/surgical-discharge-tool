@@ -9,7 +9,7 @@ export default {
 	subtitle: "Quickly generate text for your patient discharge reports.",
 	organ: "Organ",
 	heart: "Heart",
-	lungs: "Lungs",
+	lungs: "Lung",
 	times: {
 		label: "Times",
 		dayOfOperation: "Day of operation"
