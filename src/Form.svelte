@@ -21,7 +21,12 @@
             chronicalRythm: false,
             paroxysmalRythm: false,
             newAFRythm: false,
-            flutterRythm: false
+            flutterRythm: false,
+            treatments: {
+                metoprolol: false,
+                amiodarone: false,
+                defibrillation: false,
+            }
         },
         respitory: {
             lulz: false,
@@ -54,6 +59,14 @@
         <Checkbox label={labels.rhytms.newAF} bind:checked={selection.rythms.newAFRythm}/>
         <Checkbox label={labels.rhytms.flutter} bind:checked={selection.rythms.flutterRythm}/>
     </section>
+    {#if selection.rythms.newAFRythm || selection.rythms.flutterRythm}
+        <section>
+            <h2 class="text-white">{labels.rhytms.treatments.label}</h2>
+            <Checkbox label={labels.rhytms.treatments.metoprolol} bind:checked={selection.rythms.treatments.metoprolol} />
+            <Checkbox label={labels.rhytms.treatments.amiodarone} bind:checked={selection.rythms.treatments.amiodarone} />
+            <Checkbox label={labels.rhytms.treatments.defibrillation} bind:checked={selection.rythms.treatments.defibrillation} />
+        </section>
+    {/if}
     <section>
         <h2 class="text-white">{labels.respitory.label}</h2>
         <Checkbox label="No problems" bind:checked={selection.respitory.lulz}/>
