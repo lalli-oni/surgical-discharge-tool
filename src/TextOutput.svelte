@@ -2,7 +2,6 @@
     export let text: string = "";
 
     function textAreaClicked(event) {
-        console.log(event);
         if (event?.target?.value?.length == 0) {
             console.log(`no text output`);
             message = "";
@@ -20,6 +19,7 @@
 
 
 <div class="flex flex-col justify-center max-h-80" on:click={textAreaClicked}>
+    <!-- Stop resizing -->
     <textarea id="text-output" name="text-output" rows="10" cols="30"
         disabled={!(text.length > 0)}
     >{text}</textarea>
