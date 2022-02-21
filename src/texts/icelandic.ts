@@ -57,5 +57,6 @@ export default {
 		paroxysmalRythm: "The patient had preoperative paroxysmal atrial fibrillation as well as post operative.",
 		newAFRythm: "The patient had a new onset of atrial fibrillation",
 		flutterRythm: "Shit, its fluttering!"
+		dischargePattern: "The patient was discharged to {{location}}",
 	}
 }
