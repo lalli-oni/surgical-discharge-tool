@@ -40,13 +40,4 @@
 	body {
 		@apply bg-brand-primary;
 	}
-
-	h2 {
-		font-size: larger;
-		font-weight: 600;
-	}
-
-	section {
-		margin-bottom: 1.1rem;
-	}
 </style>
