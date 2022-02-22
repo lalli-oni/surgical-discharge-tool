@@ -18,9 +18,12 @@
 </script>
 
 
-<div class="flex flex-col justify-center max-h-80" on:click={textAreaClicked}>
+<div class="flex flex-col justify-center max-h-80">
     <!-- Stop resizing -->
-    <textarea id="text-output" name="text-output" rows="10" cols="30"
+    <textarea
+        id="text-output" name="text-output"
+        class="border-2 rounded-md p-2"
+        on:click={textAreaClicked}
         disabled={!(text.length > 0)}
     >{text}</textarea>
     {#if message?.length > 0}
