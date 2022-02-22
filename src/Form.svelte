@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { fade, fly } from 'svelte/transition';
   import { createEventDispatcher } from "svelte";
 
   export let labels;
@@ -74,7 +75,7 @@
     </div>
   </section>
   {#if selection.rhythms.newAF || selection.rhythms.flutter}
-    <section>
+    <section in:fly="{{ y: -100, duration: 800 }}" out:fade={{ duration: 300 }}>
       <h2>{labels.rhythms.treatments.label}</h2>
       <Checkbox
         label={labels.rhythms.treatments.metoprolol}
