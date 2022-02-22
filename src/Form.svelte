@@ -47,16 +47,11 @@
 <form class="flex flex-col gap-4">
   <section>
     <h2 class="text-white">{labels.organ}</h2>
-    <!-- TODO: radio buttons -->
-    <select
-      name="organs"
-      id="organ-selection"
-      class="bg-transparent text-white"
-      bind:value={selection.organ}
-    >
-      <option value="heart" class="text-black">{labels.heart}</option>
-      <option value="lungs" class="text-black">{labels.lungs}</option>
-    </select>
+    <SingleChoice
+      groupName="organ-selection"
+      choices={[{ id: "heart", label: labels.heart }, { id: "lungs", label: labels.lungs }]}
+      bind:selected={selection.organ}
+    />
   </section>
   <section>
     <h2 class="text-white select-none">{labels.times.label}</h2>
@@ -68,12 +63,13 @@
   </section>
   <section>
     <h2 class="text-white select-none">{labels.rhythms.label}</h2>
-    <!-- TODO: single selection -->
-    <SingleChoice
-      groupName="rhythm-selection"
-      choices={Object.keys(selection.rhythms).filter(k => k !== "treatments").map((key) => { if (key) return { id: key, label: labels.rhythms[key] } })}
-      bind:selected={rhythmSelected}
-    />
+    <div class="flex flex-col">
+      <SingleChoice
+        groupName="rhythm-selection"
+        choices={Object.keys(selection.rhythms).filter(k => k !== "treatments").map((key) => { if (key) return { id: key, label: labels.rhythms[key] } })}
+        bind:selected={rhythmSelected}
+      />
+    </div>
   </section>
   {#if selection.rhythms.newAF || selection.rhythms.flutter}
     <section>

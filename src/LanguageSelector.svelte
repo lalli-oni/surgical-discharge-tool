@@ -43,7 +43,7 @@
             {/each}
         </div>
     </div>
-    <div class="text-white">
+    <div class="text-white select-none">
         V
     </div>
 </div>

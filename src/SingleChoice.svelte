@@ -4,12 +4,10 @@
     export let selected: any = null;
 </script>
 
-<div class="flex flex-col">
-    {#each choices as choice}
-        <label class="text-white">
-            <input type=radio value={choice.id} bind:group={selected} name={groupName} />
-            {choice.label}
-        </label>
-    {/each}
-</div>
+{#each choices as choice}
+    <label class="text-white">
+        <input type=radio value={choice.id} bind:group={selected} name={groupName} />
+        {choice.label}
+    </label>
+{/each}
 
