@@ -20,5 +20,5 @@ jobs:
       uses: TravisSpomer/deploy-to-azure-storage@v1.4.0
       with:
         source-path: public
-        sas-url: ${{ secrets.STORAGE_SAS_TOKEN_PROD }}
+        sas-url: ${{ secrets.STORAGE_SAS_TOKEN }}
         
