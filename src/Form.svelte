@@ -16,12 +16,12 @@
   const selection = {
     organ: "heart",
     operationDate: new Date(),
-    rythms: {
-      sinusRythm: true,
-      chronicalRythm: false,
-      paroxysmalRythm: false,
-      newAFRythm: false,
-      flutterRythm: false,
+    rhyrhms: {
+      sinusrhyrhm: true,
+      chronicalrhyrhm: false,
+      paroxysmalrhyrhm: false,
+      newAFrhyrhm: false,
+      flutterrhyrhm: false,
       treatments: {
         metoprolol: false,
         amiodarone: false,
@@ -60,46 +60,48 @@
     />
   </section>
   <section>
-    <h2 class="text-white">{labels.rhytms.label}</h2>
+    <h2 class="text-white">{labels.rhyrhms.label}</h2>
+    <!-- TODO: single selection -->
     <Checkbox
-      label={labels.rhytms.sinus}
-      bind:checked={selection.rythms.sinusRythm}
+      label={labels.rhyrhms.sinus}
+      bind:checked={selection.rhyrhms.sinusrhyrhm}
     />
     <Checkbox
-      label={labels.rhytms.chronicalAF}
-      bind:checked={selection.rythms.chronicalRythm}
+      label={labels.rhyrhms.chronicalAF}
+      bind:checked={selection.rhyrhms.chronicalrhyrhm}
     />
     <Checkbox
-      label={labels.rhytms.paroxysmalAF}
-      bind:checked={selection.rythms.paroxysmalRythm}
+      label={labels.rhyrhms.paroxysmalAF}
+      bind:checked={selection.rhyrhms.paroxysmalrhyrhm}
     />
     <Checkbox
-      label={labels.rhytms.newAF}
-      bind:checked={selection.rythms.newAFRythm}
+      label={labels.rhyrhms.newAF}
+      bind:checked={selection.rhyrhms.newAFrhyrhm}
     />
     <Checkbox
-      label={labels.rhytms.flutter}
-      bind:checked={selection.rythms.flutterRythm}
+      label={labels.rhyrhms.flutter}
+      bind:checked={selection.rhyrhms.flutterrhyrhm}
     />
   </section>
-  {#if selection.rythms.newAFRythm || selection.rythms.flutterRythm}
+  {#if selection.rhyrhms.newAFrhyrhm || selection.rhyrhms.flutterrhyrhm}
     <section>
-      <h2 class="text-white">{labels.rhytms.treatments.label}</h2>
+      <h2 class="text-white">{labels.rhyrhms.treatments.label}</h2>
       <Checkbox
-        label={labels.rhytms.treatments.metoprolol}
-        bind:checked={selection.rythms.treatments.metoprolol}
+        label={labels.rhyrhms.treatments.metoprolol}
+        bind:checked={selection.rhyrhms.treatments.metoprolol}
       />
       <Checkbox
-        label={labels.rhytms.treatments.amiodarone}
-        bind:checked={selection.rythms.treatments.amiodarone}
+        label={labels.rhyrhms.treatments.amiodarone}
+        bind:checked={selection.rhyrhms.treatments.amiodarone}
       />
       <Checkbox
-        label={labels.rhytms.treatments.defibrillation}
-        bind:checked={selection.rythms.treatments.defibrillation}
+        label={labels.rhyrhms.treatments.defibrillation}
+        bind:checked={selection.rhyrhms.treatments.defibrillation}
       />
     </section>
   {/if}
   <section>
+    <!-- TODO: Disable text selection -->
     <h2 class="text-white">{labels.respitory.label}</h2>
     <Checkbox label="No problems" bind:checked={selection.respitory.lulz} />
   </section>

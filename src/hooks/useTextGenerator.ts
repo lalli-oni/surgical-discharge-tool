@@ -8,6 +8,8 @@ export function useTextGenerator() {
 		tokens.forEach(token => {
 			let value: string;
 			if (selections[token[1]] instanceof Date) {
+				// TODO: Leading zero for months.
+				// TODO: Use full year 
 				value = `${selections[token[1]].getDate()}.${selections[token[1]].getMonth() + 1}.${selections[token[1]].getFullYear()}`;
 			}
 			else {
@@ -16,11 +18,11 @@ export function useTextGenerator() {
 			text = text.replaceAll(token[0], value);
 		});
 
-		let rythmText = "";
-		for (const [key, value] of Object.entries(selections.rythms)) {
-			if (value === true && translation.output[key]) rythmText += "\n- " + translation.output[key];
+		let rhyrhmText = "";
+		for (const [key, value] of Object.entries(selections.rhyrhms)) {
+			if (value === true && translation.output[key]) rhyrhmText += "\n- " + translation.output[key];
 		}
-		if (rythmText?.length > 0) text += "\n" + rythmText;
+		if (rhyrhmText?.length > 0) text += "\n" + rhyrhmText;
 		
 		let rythmtreatmentText = "";
 		for (const [key, value] of Object.entries(selections.rythms.treatments)) {
