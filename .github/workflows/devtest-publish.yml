@@ -1,7 +1,7 @@
 name: Deploy to DevTest
 on:
   push:
-    branches: [ publish ]
+    branches: [ publish-devtest ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,5 +20,5 @@ jobs:
       uses: TravisSpomer/deploy-to-azure-storage@v1.4.0
       with:
         source-path: public
-        sas-url: ${{ secrets.STORAGE_SAS_TOKEN }}
+        sas-url: ${{ secrets.STORAGE_SAS_TOKEN_PROD }}
         
