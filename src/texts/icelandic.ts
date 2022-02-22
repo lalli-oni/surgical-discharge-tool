@@ -31,7 +31,7 @@ export default {
 		}
 	},
 	respitory: {
-		label: "Respitory",
+		label: "Respiratory",
 		noChanges: "No problems"
 	},
 	dischargeLocations: {

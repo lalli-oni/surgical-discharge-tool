@@ -25,7 +25,7 @@ export default {
 		flutter: "Flutter"
 	},
 	respitory: {
-		label: "Respitory",
+		label: "Respiratory",
 		noChanges: "No problems",
 		treatments: {
 			label: "rhythm treatment",
