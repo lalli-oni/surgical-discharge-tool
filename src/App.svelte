@@ -18,8 +18,8 @@
 	let outputText = "";
 </script>
 
-<div class="h-screen py-8 px-16 flex flex-col">
-	<div class="grow-0 mb-8 flex flex-row justify-between items-center">
+<div class="h-screen p-4 md:p-6 md:px-8 flex flex-col">
+	<div class="grow-0 mb-6 md:mb-8 flex flex-row justify-between items-center">
 		<div>
 			<h1 class="text-blue-100 font-semibold text-3xl">{language.title}</h1>
 			<div class="text-blue-300 text=xl">{language.subtitle}</div>
