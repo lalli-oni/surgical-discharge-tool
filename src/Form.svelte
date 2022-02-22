@@ -7,21 +7,24 @@
 
   import Checkbox from "./Checkbox.svelte";
   import DatePicker from "./DatePicker.svelte";
+  import SingleChoice from "./SingleChoice.svelte";
 
   const dateChanged = (event) => {
     selection.operationDate = event.detail.date;
     dispatch("selection-changed", selection);
   };
 
+  let rhythmSelected = "sinus";
+
   const selection = {
     organ: "heart",
     operationDate: new Date(),
     rhythms: {
-      sinusRhythm: true,
-      chronicalRhythm: false,
-      paroxysmalRhythm: false,
-      newAFRhythm: false,
-      flutterRhythm: false,
+      sinus: true,
+      chronicalAF: false,
+      paroxysmalAF: false,
+      newAF: false,
+      flutter: false,
       treatments: {
         metoprolol: false,
         amiodarone: false,
@@ -35,6 +38,10 @@
   };
 
   $: dispatch("selection-changed", selection);
+
+  $: if (rhythmSelected) Object.keys(selection.rhythms)
+                               .filter(k => k !== "treatments")
+                               .forEach(f => selection.rhythms[f] = (rhythmSelected === f) ? true : false);
 </script>
 
 <form class="flex flex-col gap-4">
@@ -62,28 +69,13 @@
   <section>
     <h2 class="text-white select-none">{labels.rhythms.label}</h2>
     <!-- TODO: single selection -->
-    <Checkbox
-      label={labels.rhythms.sinus}
-      bind:checked={selection.rhythms.sinusRhythm}
-    />
-    <Checkbox
-      label={labels.rhythms.chronicalAF}
-      bind:checked={selection.rhythms.chronicalRhythm}
-    />
-    <Checkbox
-      label={labels.rhythms.paroxysmalAF}
-      bind:checked={selection.rhythms.paroxysmalRhythm}
-    />
-    <Checkbox
-      label={labels.rhythms.newAF}
-      bind:checked={selection.rhythms.newAFRhythm}
-    />
-    <Checkbox
-      label={labels.rhythms.flutter}
-      bind:checked={selection.rhythms.flutterRhythm}
+    <SingleChoice
+      groupName="rhythm-selection"
+      choices={Object.keys(selection.rhythms).filter(k => k !== "treatments").map((key) => { if (key) return { id: key, label: labels.rhythms[key] } })}
+      bind:selected={rhythmSelected}
     />
   </section>
-  {#if selection.rhythms.newAFRhythm || selection.rhythms.flutterRhythm}
+  {#if selection.rhythms.newAF || selection.rhythms.flutter}
     <section>
       <h2 class="text-white select-none">{labels.rhythms.treatments.label}</h2>
       <Checkbox
