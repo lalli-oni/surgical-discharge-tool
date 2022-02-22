@@ -16,12 +16,12 @@
   const selection = {
     organ: "heart",
     operationDate: new Date(),
-    rhyrhms: {
-      sinusrhyrhm: true,
-      chronicalrhyrhm: false,
-      paroxysmalrhyrhm: false,
-      newAFrhyrhm: false,
-      flutterrhyrhm: false,
+    rhythms: {
+      sinusRhythm: true,
+      chronicalRhythm: false,
+      paroxysmalRhythm: false,
+      newAFRhythm: false,
+      flutterRhythm: false,
       treatments: {
         metoprolol: false,
         amiodarone: false,
@@ -52,7 +52,7 @@
     </select>
   </section>
   <section>
-    <h2 class="text-white">{labels.times.label}</h2>
+    <h2 class="text-white select-none">{labels.times.label}</h2>
     <DatePicker
       on:date-selected={dateChanged}
       label={labels.times.dayOfOperation}
@@ -60,49 +60,48 @@
     />
   </section>
   <section>
-    <h2 class="text-white">{labels.rhyrhms.label}</h2>
+    <h2 class="text-white select-none">{labels.rhythms.label}</h2>
     <!-- TODO: single selection -->
     <Checkbox
-      label={labels.rhyrhms.sinus}
-      bind:checked={selection.rhyrhms.sinusrhyrhm}
+      label={labels.rhythms.sinus}
+      bind:checked={selection.rhythms.sinusRhythm}
     />
     <Checkbox
-      label={labels.rhyrhms.chronicalAF}
-      bind:checked={selection.rhyrhms.chronicalrhyrhm}
+      label={labels.rhythms.chronicalAF}
+      bind:checked={selection.rhythms.chronicalRhythm}
     />
     <Checkbox
-      label={labels.rhyrhms.paroxysmalAF}
-      bind:checked={selection.rhyrhms.paroxysmalrhyrhm}
+      label={labels.rhythms.paroxysmalAF}
+      bind:checked={selection.rhythms.paroxysmalRhythm}
     />
     <Checkbox
-      label={labels.rhyrhms.newAF}
-      bind:checked={selection.rhyrhms.newAFrhyrhm}
+      label={labels.rhythms.newAF}
+      bind:checked={selection.rhythms.newAFRhythm}
     />
     <Checkbox
-      label={labels.rhyrhms.flutter}
-      bind:checked={selection.rhyrhms.flutterrhyrhm}
+      label={labels.rhythms.flutter}
+      bind:checked={selection.rhythms.flutterRhythm}
     />
   </section>
-  {#if selection.rhyrhms.newAFrhyrhm || selection.rhyrhms.flutterrhyrhm}
+  {#if selection.rhythms.newAFRhythm || selection.rhythms.flutterRhythm}
     <section>
-      <h2 class="text-white">{labels.rhyrhms.treatments.label}</h2>
+      <h2 class="text-white select-none">{labels.rhythms.treatments.label}</h2>
       <Checkbox
-        label={labels.rhyrhms.treatments.metoprolol}
-        bind:checked={selection.rhyrhms.treatments.metoprolol}
+        label={labels.rhythms.treatments.metoprolol}
+        bind:checked={selection.rhythms.treatments.metoprolol}
       />
       <Checkbox
-        label={labels.rhyrhms.treatments.amiodarone}
-        bind:checked={selection.rhyrhms.treatments.amiodarone}
+        label={labels.rhythms.treatments.amiodarone}
+        bind:checked={selection.rhythms.treatments.amiodarone}
       />
       <Checkbox
-        label={labels.rhyrhms.treatments.defibrillation}
-        bind:checked={selection.rhyrhms.treatments.defibrillation}
+        label={labels.rhythms.treatments.defibrillation}
+        bind:checked={selection.rhythms.treatments.defibrillation}
       />
     </section>
   {/if}
   <section>
-    <!-- TODO: Disable text selection -->
-    <h2 class="text-white">{labels.respitory.label}</h2>
+    <h2 class="text-white select-none">{labels.respitory.label}</h2>
     <Checkbox label="No problems" bind:checked={selection.respitory.lulz} />
   </section>
   <section>

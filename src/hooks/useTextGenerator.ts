@@ -18,17 +18,17 @@ export function useTextGenerator() {
 			text = text.replaceAll(token[0], value);
 		});
 
-		let rhyrhmText = "";
-		for (const [key, value] of Object.entries(selections.rhyrhms)) {
-			if (value === true && translation.output[key]) rhyrhmText += "\n- " + translation.output[key];
+		let rhythmText = "";
+		for (const [key, value] of Object.entries(selections.rhythms)) {
+			if (value === true && translation.output[key]) rhythmText += "\n- " + translation.output[key];
 		}
-		if (rhyrhmText?.length > 0) text += "\n" + rhyrhmText;
+		if (rhythmText?.length > 0) text += "\n" + rhythmText;
 		
-		let rythmtreatmentText = "";
-		for (const [key, value] of Object.entries(selections.rythms.treatments)) {
-			if (value === true && translation.output[key]) rythmtreatmentText += "\n- " + translation.output[key];
+		let rhythmtreatmentText = "";
+		for (const [key, value] of Object.entries(selections.rhythms.treatments)) {
+			if (value === true && translation.output[key]) rhythmtreatmentText += "\n- " + translation.output[key];
 		}
-		if (rythmtreatmentText?.length > 0) text += "\n" + rythmtreatmentText;
+		if (rhythmtreatmentText?.length > 0) text += "\n" + rhythmtreatmentText;
 
 		let respiratoryText = "";
 		for (const [key, value] of Object.entries(selections.respitory)) {

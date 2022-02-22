@@ -14,8 +14,8 @@ export default {
 		label: "Tímar",
 		dayOfOperation: "Dagur uppskurðar"
 	},
-	rhyrhms: {
-		label: "Heart rhyrhms",
+	rhythms: {
+		label: "Heart rhythms",
 		sinus: "Sinus",
 		// Atrial Fibrillation (A-fib) is an irregular and often very rapid heart rhythm (arrhythmia) that can lead to blood clots in the heart.
 		chronicalAF: "Chronical AF",
@@ -24,7 +24,7 @@ export default {
 		newAF: "New AF",
 		flutter: "Flutter",
 		treatments: {
-			label: "rhyrhm treatment",
+			label: "rhythm treatment",
 			metoprolol: "Metoprolol",
 			amiodarone: "Amiodarone",
 			defibrillation: "Defibrillation",
@@ -52,11 +52,11 @@ export default {
 	},
 	output: {
 		pattern: "The patient had {{organ}} surgery on {{operationDate}}",
-		sinusrhyrhm: "Post operative, the patient had an uncomplicated sinus rhythm.",
-		chronicalrhyrhm: "The patient had preoperative chronic atrial fibrillation as well as post operative. ",
-		paroxysmalrhyrhm: "The patient had preoperative paroxysmal atrial fibrillation as well as post operative.",
-		newAFrhyrhm: "The patient had a new onset of atrial fibrillation",
-		flutterrhyrhm: "Shit, its fluttering!",
+		sinusRhythm: "Post operative, the patient had an uncomplicated sinus rhythm.",
+		chronicalRhythm: "The patient had preoperative chronic atrial fibrillation as well as post operative. ",
+		paroxysmalRhythm: "The patient had preoperative paroxysmal atrial fibrillation as well as post operative.",
+		newAFRhythm: "The patient had a new onset of atrial fibrillation",
+		flutterRhythm: "Shit, its fluttering!",
 		dischargePattern: "The patient was discharged to {{location}}",
 		metoprolol: "Patient was converted successfully back to sinus rhythm with Metoprolol treatment",
 		amiodarone: "Patient was converted successfully back to sinus rhythm with Amiodarone treatment",
