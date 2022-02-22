@@ -18,7 +18,7 @@
 	let outputText = "";
 </script>
 
-<div class="bg-brand-primary h-screen py-8 px-16 flex flex-col">
+<div class="h-screen py-8 px-16 flex flex-col">
 	<div class="grow-0 mb-8 flex flex-row justify-between items-center">
 		<div>
 			<h1 class="text-blue-100 font-semibold text-3xl">{language.title}</h1>
@@ -36,6 +36,10 @@
 	@tailwind base;
 	@tailwind components;
 	@tailwind utilities;
+
+	body {
+		@apply bg-brand-primary;
+	}
 
 	h2 {
 		font-size: larger;
