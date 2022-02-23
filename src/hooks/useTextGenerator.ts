@@ -6,17 +6,14 @@ export function useTextGenerator() {
 		let text = translation.output.pattern;
 		const tokens = [...text.matchAll(tokenPattern)];
 		tokens.forEach(token => {
-			let value: string;
-			if (selections[token[1]] instanceof Date) {
-				let date = selections[token[1]].getDate();
-				if (date < 10) date = "0" + date;
-				let month = selections[token[1]].getMonth() + 1;
-				// Add leading zero
-				if (month < 10) month = "0" + month;
-				value = `${date}.${month}.${selections[token[1]].getFullYear()}`;
+			let value = selections[token[1]];
+			if (value instanceof Date) {
+				const date = addLeadingZero(value.getDate());
+				const month = addLeadingZero(value.getMonth() + 1);
+				value = `${date}.${month}.${value.getFullYear()}`;
 			}
-			else {
-				value = selections[token[1]];
+			else if (value?.id?.length > 0) {
+				value = value.id;
 			}
 			text = text.replaceAll(token[0], value);
 		});
@@ -48,3 +45,5 @@ export function useTextGenerator() {
 	};
 	return { generate };
 }
+
+const addLeadingZero = (number: number) => (number < 10) ? "0" + new String(number) : new String(number);
