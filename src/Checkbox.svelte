@@ -1,6 +1,6 @@
 <script lang="ts">
     export let label: string;
-    export let id: string = null;
+    export let id: string;
     export let checked: boolean;
 </script>
 

@@ -20,7 +20,7 @@
 
 <div class="h-full w-full bg-pattern">
 	<div class="p-4 md:p-6 md:px-8 flex flex-col">
-		<div class="grow-0 mb-6 md:mb-8 flex flex-row justify-between items-center">
+		<div class="grow-0 pb-6 md:mb-8 flex flex-row justify-between items-center">
 			<div>
 				<h1 class="text-white font-semibold text-3xl">{language.title}</h1>
 				<div class="text-blue-200 text=xl">{language.subtitle}</div>
@@ -39,13 +39,18 @@
 	@tailwind components;
 	@tailwind utilities;
 
+	html {
+		height: 100%;
+	}
+
 	body {
-		@apply bg-brand-primary;
+		@apply bg-brand-primary h-full;
 	}
 
 	.bg-pattern {
-		background: linear-gradient(to bottom right, transparent, black 80%), url("../background.svg");
+		background: linear-gradient(to bottom right, #0F01A7, black 50%), url("../background.svg");
+		background-blend-mode: color;
 		background-attachment: fixed;
-		background-size: cover;
+		background-size: contain;
 	}
 </style>
