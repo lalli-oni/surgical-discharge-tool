@@ -19,8 +19,9 @@ export function useTextGenerator() {
 		});
 
 		let rhythmText = "";
+		console.log(selections.rhythms)
 		for (const [key, value] of Object.entries(selections.rhythms)) {
-			if (value === true && translation.output[key]) rhythmText += "\n- " + translation.output[key];
+			if (value === true && translation.output.rhythms[key]) rhythmText += "\n- " + translation.output.rhythms[key];
 		}
 		if (rhythmText?.length > 0) text += "\n" + rhythmText;
 		

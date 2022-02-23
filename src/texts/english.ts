@@ -52,11 +52,13 @@ export default {
 	},
 	output: {
 		pattern: "The patient had {{organ}} surgery on {{operationDate}}",
-		sinusRhythm: "Post operative, the patient had an uncomplicated sinus rhythm.",
-		chronicalRhythm: "The patient had preoperative chronic atrial fibrillation as well as post operative. ",
-		paroxysmalRhythm: "The patient had preoperative paroxysmal atrial fibrillation as well as post operative.",
-		newAFRhythm: "The patient had a new onset of atrial fibrillation",
-		flutterRhythm: "Shit, its fluttering!",
+		rhythms: {
+			sinus: "Post operative, the patient had an uncomplicated sinus rhythm.",
+			chronicalAF: "The patient had preoperative chronic atrial fibrillation as well as post operative. ",
+			paroxysmalAF: "The patient had preoperative paroxysmal atrial fibrillation as well as post operative.",
+			newAF: "The patient had a new onset of atrial fibrillation",
+			flutter: "Shit, its fluttering!",
+		},
 		dischargePattern: "The patient was discharged to {{location}}",
 		metoprolol: "Patient was converted successfully back to sinus rhythm with Metoprolol treatment",
 		amiodarone: "Patient was converted successfully back to sinus rhythm with Amiodarone treatment",
