@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         'brand-primary': '#142B76',
         'brand-lighter': '#3D529A',
+        'highlight-primary': '#FFC700'
       }
     },
   },
