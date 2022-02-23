@@ -20,6 +20,7 @@
 <div
     class="flex flex-row justify-between items-center hover:cursor-pointer gap-2 group p-2"
     on:click={toggleVisibility} on:mouseenter={toggleVisibility} on:mouseleave={toggleVisibility}
+    in:fade={{ delay: 500, duration: 600}}
 >
     <div>
         <Svg id="selected-language" icon={language.meta.flag} label={language.id}
