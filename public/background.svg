@@ -1,6 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 700 700" width="700" height="700" opacity="1"><defs><linearGradient gradientTransform="rotate(131, 0.5, 0.5)" x1="50%" y1="0%" x2="50%" y2="100%" id="ffflux-gradient"><stop stop-color="#142b76" stop-opacity="1" offset="0%"></stop><stop stop-color="#3d529a" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="ffflux-filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-  <feTurbulence type="fractalNoise" baseFrequency="0.003 0.006" numOctaves="1" seed="235" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence"></feTurbulence>
-  <feGaussianBlur stdDeviation="75 9" x="0%" y="0%" width="100%" height="100%" in="turbulence" edgeMode="duplicate" result="blur"></feGaussianBlur>
-  <feBlend mode="color-burn" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" in2="blur" result="blend"></feBlend>
-  
-</filter></defs><rect width="700" height="700" fill="url(#ffflux-gradient)" filter="url(#ffflux-filter)"></rect></svg>
+<svg width="1440" height="348" viewBox="0 0 1440 348" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 7.69719L48 36.4724C96 65.2477 192 122.798 288 108.411C384 94.0229 480 7.69719 576 0.503381C672 -6.69043 768 65.2477 864 86.8291C960 108.411 1056 79.6353 1152 86.8291C1248 94.0229 1344 137.186 1392 158.767L1440 180.349V353H1392C1344 353 1248 353 1152 353C1056 353 960 353 864 353C768 353 672 353 576 353C480 353 384 353 288 353C192 353 96 353 48 353H0V7.69719Z" fill="url(#paint0_linear_0_1)" fill-opacity="0.5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 175L48 182.208C96 189.417 192 203.833 288 182.208C384 160.583 480 102.917 576 110.125C672 117.333 768 189.417 864 203.833C960 218.25 1056 175 1152 131.75C1248 88.5 1344 45.25 1392 23.625L1440 2V348H1392C1344 348 1248 348 1152 348C1056 348 960 348 864 348C768 348 672 348 576 348C480 348 384 348 288 348C192 348 96 348 48 348H0V175Z" fill="url(#paint1_linear_0_1)" fill-opacity="0.5"/>
+<defs>
+<linearGradient id="paint0_linear_0_1" x1="720" y1="0" x2="720" y2="353" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0F02A2"/>
+<stop offset="1" stop-color="#0F02A2" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_1" x1="720" y1="2" x2="720" y2="348" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0F02A2"/>
+<stop offset="1" stop-color="#0F02A2" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
