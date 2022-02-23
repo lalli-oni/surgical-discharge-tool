@@ -16,6 +16,8 @@
   };
 
   let rhythmSelected = "sinus";
+  
+  let validSelection = false;
 
   const selection = {
     organ: "heart",
@@ -38,7 +40,10 @@
     dischargeLocation: labels.dischargeLocations[0]
   };
 
-  $: if (selection.operationDate) dispatch("selection-changed", selection);
+  // Form validation
+  $: if (selection.operationDate) validSelection = true;
+
+  $: if (validSelection) dispatch("selection-changed", selection);
 
   $: if (rhythmSelected) Object.keys(selection.rhythms)
                                .filter(k => k !== "treatments")
@@ -112,6 +117,6 @@
 
 <style>
   section > h2 {
-    @apply mb-2 text-white select-none text-xl font-bold tracking-wide;
+    @apply text-white select-none text-xl font-bold tracking-wider;
   }
 </style>
