@@ -8,9 +8,12 @@ export function useTextGenerator() {
 		tokens.forEach(token => {
 			let value: string;
 			if (selections[token[1]] instanceof Date) {
-				// TODO: Leading zero for months.
-				// TODO: Use full year 
-				value = `${selections[token[1]].getDate()}.${selections[token[1]].getMonth() + 1}.${selections[token[1]].getFullYear()}`;
+				let date = selections[token[1]].getDate();
+				if (date < 10) date = "0" + date;
+				let month = selections[token[1]].getMonth() + 1;
+				// Add leading zero
+				if (month < 10) month = "0" + month;
+				value = `${date}.${month}.${selections[token[1]].getFullYear()}`;
 			}
 			else {
 				value = selections[token[1]];
