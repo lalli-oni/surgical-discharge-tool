@@ -13,7 +13,7 @@
 
 <!-- {@debug date} -->
 
-<div class="flex flex-col">
-    <label class="text-white" for={id}>{label}</label>
-    <input type="date" id={id} on:input={dateSelected} class="bg-transparent text-white border" />
+<div class="flex flex-row justify-between gap-2">
+    <label class="text-white grow" for={id}>{label}</label>
+    <input type="date" id={id} on:input={dateSelected} class={`bg-transparent text-white border shrink ${(value) ? "border-4" : "border-2"}`} />
 </div>
