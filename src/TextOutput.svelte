@@ -18,24 +18,15 @@
 </script>
 
 
-<div class="flex flex-col justify-center max-h-80">
+<div class="flex flex-col justify-start h-full w-full">
     <!-- Stop resizing -->
     <textarea
         id="text-output" name="text-output"
-        class="border-2 rounded-md p-2"
+        class="w-full h-full max-h-80% outline-none resize-none border-2 rounded-md p-2 border-brand-primary hover:border-highlight-secondary"
         on:click={textAreaClicked}
         disabled={!(text.length > 0)}
     >{text}</textarea>
     {#if message?.length > 0}
-        <div class="text-white">{message}</div>
+        <div class="text-white animate-pulse duration-1000 p-2">{message}</div>
     {/if}
 </div>
-
-<style>
-    textarea {
-        width: 100%;
-        height: 100%;
-        outline: none;
-        resize: none;
-    }
-</style>

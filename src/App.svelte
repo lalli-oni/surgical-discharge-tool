@@ -19,15 +19,15 @@
 </script>
 
 <div class="h-full w-full bg-pattern">
-	<div class="p-4 md:p-6 md:px-8 flex flex-col">
-		<div class="grow-0 pb-6 md:mb-8 flex flex-row justify-between items-center">
+	<div class="p-4 px:8 md:p-6 md:px-16 flex flex-col h-full">
+		<div class="grow-0 pb-6 md:mb-8 gap-8 md:gap-4 flex flex-row justify-between items-center">
 			<div>
 				<h1 class="text-white font-semibold text-3xl">{language.title}</h1>
 				<div class="text-blue-200 text=xl">{language.subtitle}</div>
 			</div>
 			<LanguageSelector bind:language languages={Object.values(languages)} />
 		</div>
-		<main class="flex flex-row gap-8 grow justify-evenly">
+		<main class="flex flex-row gap-8 grow justify-evenly overflow-hidden">
 			<Form on:selection-changed={selectionChanged} labels={language} />
 			<TextOutput text={outputText} />
 		</main>
@@ -44,13 +44,29 @@
 	}
 
 	body {
-		@apply bg-brand-primary h-full;
+		@apply bg-brand-primary h-full overflow-hidden;
 	}
 
 	.bg-pattern {
-		background: linear-gradient(to bottom right, #0F01A7, black 50%), url("../background.svg");
-		background-blend-mode: color;
-		background-attachment: fixed;
-		background-size: contain;
+		/* background: linear-gradient(to bottom right, #0F01A7, black 50%), url("../background.svg"); */
+		background:  url("../foreground-wave.svg") no-repeat, url("../background-wave.svg") no-repeat, linear-gradient(130.67deg, #0F01A7 -1.87%, #000000 79.27%);
+		background-position: right 0px bottom 0px, right 0px bottom 0px;
+		background-blend-mode: exclusion, exclusion, normal;
+		background-attachment: scroll, scroll, fixed;
+		background-size: contain, contain, cover;
+	}
+
+	#foreground-wave-gradient-color {
+		animation: pulse 1s infinite;
+	}
+
+	@keyframes pulse {
+		0% {
+			stop-color: #a24f02;
+		}
+
+		100% {
+			stop-color: #a20702;
+		}
 	}
 </style>
