@@ -1,0 +1,11 @@
+<svg id="foreground-wave" width="1440" height="346" viewBox="0 0 1440 346" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M0 173L48 180.208C96 187.417 192 201.833 288 180.208C384 158.583 480 100.917 576 108.125C672 115.333 768 187.417 864 201.833C960 216.25 1056 173 1152 129.75C1248 86.5 1344 43.25 1392 21.625L1440 0V346H1392C1344 346 1248 346 1152 346C1056 346 960 346 864 346C768 346 672 346 576 346C480 346 384 346 288 346C192 346 96 346 48 346H0V173Z"
+        fill="url(#foreground-wave-gradient)" fill-opacity="0.5" />
+    <defs>
+        <linearGradient id="foreground-wave-gradient" x1="720" y1="0" x2="720" y2="346" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0F02A2" />
+            <stop offset="1" stop-color="#0F02A2" stop-opacity="0" />
+        </linearGradient>
+    </defs>
+</svg>
