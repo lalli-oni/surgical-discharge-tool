@@ -62,7 +62,7 @@
 
 <!-- <form class="scroll-shadow off-bottom grow min-w-max"> -->
   <!-- TODO: single column drops discharge location and overflow is disabled -->
-<form class="grow min-w-max">
+<form class="grow min-w-max overflow-x-hidden overflow-y-auto">
   <!-- <div class="scroll-box styled-scrollbar"> -->
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-4">
     <section>
