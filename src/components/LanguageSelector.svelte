@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { scale, fade } from 'svelte/transition';
-    import Svg from './svg.svelte';
+    import Svg from '../svg.svelte';
     export let languages;
     export let language = languages.english;
     let expanded: boolean = false;

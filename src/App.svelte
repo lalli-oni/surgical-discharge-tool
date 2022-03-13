@@ -2,9 +2,9 @@
 	import * as languages from "./texts";
 	import { useTextGenerator } from "./hooks/useTextGenerator";
 
-	import Form from "./Form.svelte";
-	import TextOutput from "./TextOutput.svelte";
-	import LanguageSelector from "./LanguageSelector.svelte";
+	import Form from "./components/Form.svelte";
+	import TextOutput from "./components/TextOutput.svelte";
+	import LanguageSelector from "./components/LanguageSelector.svelte";
 
 	const textGenerator = useTextGenerator();
 	const selectionChanged = (event) => {
