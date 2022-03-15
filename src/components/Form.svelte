@@ -69,7 +69,6 @@
       <h2>{labels.organ}</h2>
       <div class="flex flex-row justify-around">
         <SingleChoice
-          groupName="organ-selection"
           choices={organChoices}
           bind:selected={selection.organ}
         />
@@ -87,7 +86,6 @@
       <h2>{labels.rhythms.label}</h2>
       <div class="flex flex-col gap-2">
         <SingleChoice
-          groupName="rhythm-selection"
           choices={Object.keys(selection.rhythms).filter(k => k !== "treatments").map((key) => { if (key) return { id: key, label: labels.rhythms[key] } })}
           bind:selected={rhythmSelected}
         />
@@ -96,26 +94,12 @@
     {#if selection.rhythms.newAF || selection.rhythms.flutter}
       <section in:fly="{{ y: -100, duration: 800 }}" out:fade={{ duration: 300 }}>
         <h2>{labels.rhythms.treatments.label}</h2>
-        <SingleChoice
-          groupName="rhythm-treatment-selection"
-          choices={Object.keys(selection.rhythms.treatments).filter(k => k !== "treatments").map((key) => { if (key) return { id: key, label: labels.rhythms.treatments[key] } })}
-          bind:selected={rhythmTreatmentSelected}
-        />
-        <!-- <Checkbox
-          id="metoprolol-treatment-select"
-          label={labels.rhythms.treatments.metoprolol}
-          bind:checked={selection.rhythms.treatments.metoprolol}
-        />
-        <Checkbox
-        id="amiodarone-treatment-select"
-          label={labels.rhythms.treatments.amiodarone}
-          bind:checked={selection.rhythms.treatments.amiodarone}
-        />
-        <Checkbox
-        id="defibrillation-treatment-select"
-          label={labels.rhythms.treatments.defibrillation}
-          bind:checked={selection.rhythms.treatments.defibrillation}
-        /> -->
+        <div class="flex flex-col gap-2">
+          <SingleChoice
+            choices={Object.keys(selection.rhythms.treatments).filter(k => k !== "treatments").map((key) => { if (key) return { id: key, label: labels.rhythms.treatments[key] } })}
+            bind:selected={rhythmTreatmentSelected}
+          />
+        </div>
       </section>
     {/if}
     <section>
@@ -127,7 +111,7 @@
       <select
         name="discharge-location"
         id="discharge-location-selection"
-        class="bg-transparent border border-brand-primary p-2 pr-4 text-highlight-primary rounded-md hover:shadow-blue-400"
+        class="bg-transparent border border-brand-primary p-2 pr-4 text-highlight-primary rounded-md hover:shadow-blue-400 hover:border-highlight-primary"
         bind:value={selection.dischargeLocation}
       >
       {#each labels.dischargeLocations.items as location}
