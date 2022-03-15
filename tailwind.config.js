@@ -17,7 +17,8 @@ module.exports = {
         'brand-primary': '#4538D4',
         'brand-lighter': '#3D529A',
         'highlight-primary': '#FFC700',
-        'highlight-secondary': '#f5c242'
+        'highlight-secondary': '#f5c242',
+        'highlight-light': '#fcce4e'
       }
     },
   },
