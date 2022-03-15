@@ -15,7 +15,7 @@ export default {
 		dayOfOperation: "Day of operation"
 	},
 	rhythms: {
-		label: "Heart rhythms",
+		label: "Heart rhythm",
 		sinus: "Sinus",
 		// Atrial Fibrillation (A-fib) is an irregular and often very rapid heart rhythm (arrhythmia) that can lead to blood clots in the heart.
 		chronicalAF: "Chronical AF",
@@ -24,7 +24,7 @@ export default {
 		newAF: "New AF",
 		flutter: "Flutter",
 		treatments: {
-			label: "rhythm treatment",
+			label: "Rhythm treatment",
 			metoprolol: "Metoprolol",
 			amiodarone: "Amiodarone",
 			defibrillation: "Defibrillation",
