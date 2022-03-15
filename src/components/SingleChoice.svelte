@@ -1,5 +1,4 @@
 <script lang="ts">
-    export let groupName: string;
     export let choices: Array<any> = [];
     export let selected: any;
 
