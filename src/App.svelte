@@ -5,6 +5,10 @@
 	import Form from "./components/Form.svelte";
 	import TextOutput from "./components/TextOutput.svelte";
 	import LanguageSelector from "./components/LanguageSelector.svelte";
+	import About from "./components/About.svelte";
+	import Modal from "./components/Modal.svelte";
+
+	import { modal } from './store.js';
 
 	const textGenerator = useTextGenerator();
 	const selectionChanged = (event) => {
@@ -25,7 +29,12 @@
 				<h1 class="text-white font-semibold text-3xl">{language.title}</h1>
 				<div class="text-blue-200 text=xl">{language.subtitle}</div>
 			</div>
-			<LanguageSelector bind:language languages={Object.values(languages)} />
+			<div class="flex flex-row items-baseline gap-4">
+				<Modal show={$modal}>
+					<About />
+				</Modal>
+				<LanguageSelector bind:language languages={Object.values(languages)} />
+			</div>
 		</div>
 		<main class="flex flex-row gap-8 grow justify-evenly overflow-hidden">
 			<Form on:selection-changed={selectionChanged} labels={language} />
@@ -49,7 +58,7 @@
 
 	.bg-pattern {
 		/* background: linear-gradient(to bottom right, #0F01A7, black 50%), url("../background.svg"); */
-		background:  url("../foreground-wave.svg") no-repeat, url("../background-wave.svg") no-repeat, linear-gradient(130.67deg, #0F01A7 -1.87%, #000000 79.27%);
+		background: url("../foreground-wave.svg") no-repeat, url("../background-wave.svg") no-repeat, linear-gradient(130.67deg, #0F01A7 -1.87%, #000000 79.27%);
 		background-position: right 0px bottom 0px, right 0px bottom 0px;
 		background-blend-mode: exclusion, exclusion, normal;
 		background-attachment: scroll, scroll, fixed;
