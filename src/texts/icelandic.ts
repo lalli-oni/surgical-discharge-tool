@@ -8,6 +8,8 @@ export default {
 	title: "Honorable",
 	subtitle: "Spýtir út texta fyrir útskrift (á sjúklingum, ekki menntaskólapakk!).",
 	instruction: "Fylltu inn til að fá textann hér.",
+	newReport: "Ný skýrsla",
+	newReportConfirmation: "Ertu viss um að þú vilt byrja nýja skýrslu? Núverandi stillingar verða hreinsaðar!",
 	organ: "Líffæri",
 	heart: "Hjarta",
 	lungs: "Lungu",
