@@ -5,8 +5,9 @@
     export let language = languages.english;
     let expanded: boolean = false;
 
-    const languageSelected = (event) => {
-        const temp = languages.find((l) => l.meta.id === event.detail);
+    const languageSelected = (languageId) => {
+        const temp = languages.find((l) => l.meta.id === languageId);
+        console.log(languageId)
         if (temp) language = temp;
         expanded = false;
     };
@@ -42,7 +43,7 @@
                         boxWidth={640} boxHeight={480}
                         on:svg-click={languageSelected}
                     /> -->
-                    <span class="text-white m-2 hover:font-bold" on:click={languageSelected}>{languageOption.meta.label}</span>
+                    <span class="text-white m-2 hover:font-bold" on:click={() => languageSelected(languageOption.meta.id)}>{languageOption.meta.label}</span>
                 {/each}
             </div>
         {/if}
