@@ -50,9 +50,6 @@
 
   $: if (validSelection) dispatch("selection-changed", selection);
 
-  $: console.log(selection.rhythms);
-  // $: console.log(rhythmSelected);
-
   $: if (rhythmSelected) Object.keys(selection.rhythms)
                                .filter(k => k !== "treatments")
                                .forEach(f => selection.rhythms[f] = (rhythmSelected.id === f) ? true : false);
@@ -60,10 +57,7 @@
   $: if (rhythmTreatmentSelected) Object.keys(selection.rhythms.treatments).forEach(f => selection.rhythms.treatments[f] = (rhythmTreatmentSelected.id === f) ? true : false);
 </script>
 
-<!-- <form class="scroll-shadow off-bottom grow min-w-max"> -->
-  <!-- TODO: single column drops discharge location and overflow is disabled -->
 <form class="grow min-w-max overflow-x-hidden overflow-y-auto">
-  <!-- <div class="scroll-box styled-scrollbar"> -->
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-4">
     <section>
       <h2>{labels.organ}</h2>
@@ -104,7 +98,10 @@
     {/if}
     <section>
       <h2>{labels.respitory.label}</h2>
-      <Checkbox id="no-respiratory-problems-select" label="No problems" bind:checked={selection.respitory.lulz} />
+      <SingleChoice
+        choices={[{ id: 'no-respitory-problems', label: labels.respitory.noChanges }]}
+        bind:selected={selection.respitory.lulz}
+      />
     </section>
     <section>
       <h2>{labels.dischargeLocations.label}</h2>
