@@ -7,6 +7,7 @@ export default {
 	},
 	title: "Honorable",
 	subtitle: "Spýtir út texta fyrir útskrift (á sjúklingum, ekki menntaskólapakk!).",
+	instruction: "Fylltu inn til að fá textann hér.",
 	organ: "Líffæri",
 	heart: "Hjarta",
 	lungs: "Lungu",

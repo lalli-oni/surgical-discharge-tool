@@ -7,6 +7,7 @@ export default {
 	},
 	title: "Honorable",
 	subtitle: "Quickly generate text for your patient discharge reports.",
+	instruction: "Please fill in the form to generate a report text.",
 	organ: "Organ",
 	heart: "Heart",
 	lungs: "Lung",

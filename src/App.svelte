@@ -38,7 +38,7 @@
 		</div>
 		<main class="flex flex-row gap-8 grow justify-evenly overflow-hidden">
 			<Form on:selection-changed={selectionChanged} labels={language} />
-			<TextOutput text={outputText} />
+			<TextOutput text={outputText} placeholder={language.instruction} />
 		</main>
 	</div>
 </div>

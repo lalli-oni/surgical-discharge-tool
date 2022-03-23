@@ -1,5 +1,6 @@
 <script lang="ts">
     export let text: string = "";
+    export let placeholder: string = "Please fill on the form to generate a report text.";
 
     function textAreaClicked(event) {
         if (event?.target?.value?.length == 0) {
@@ -27,5 +28,6 @@
         class="w-full h-full max-h-80% outline-none resize-none border-2 rounded-md p-2 border-brand-primary hover:border-highlight-secondary"
         on:click={textAreaClicked}
         disabled={!(text.length > 0)}
+        placeholder={placeholder}
     >{text}</textarea>
 </div>
