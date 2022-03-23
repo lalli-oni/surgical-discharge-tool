@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { scale, fade } from 'svelte/transition';
-    import Svg from './svg.svelte';
+    import Svg from '../svg.svelte';
     export let languages;
     export let language = languages.english;
     let expanded: boolean = false;
@@ -27,10 +27,11 @@
             class="group-hover:shadow-orange-glow md:scale-125" 
             boxWidth={640} boxHeight={480}
         /> -->
-        <span class="font-bold text-white">{language.meta.label}</span>
+        <span class="font-bold text-white p-2">{language.meta.label}</span>
         {#if expanded === true}
+        <!-- {#if true} -->
             <div
-                class="flex absolute mt-3 p-2 flex-col bg-brand-lighter rounded-lg border-2 border-brand-primary"
+                class="flex absolute p-2 flex-col bg-brand-lighter rounded-lg border-2 border-brand-primary"
                 in:scale={{ duration: 300 }} out:fade={{ duration: 300, delay: 100 }}
             >
                 {#each languages.filter(lang => lang.meta.id !== language.meta.id) as languageOption}
@@ -41,7 +42,7 @@
                         boxWidth={640} boxHeight={480}
                         on:svg-click={languageSelected}
                     /> -->
-                    <span class="text-white m-1 hover:font-bold" on:click={languageSelected}>{languageOption.meta.label}</span>
+                    <span class="text-white m-2 hover:font-bold" on:click={languageSelected}>{languageOption.meta.label}</span>
                 {/each}
             </div>
         {/if}

@@ -6,9 +6,9 @@
 
   const dispatch = createEventDispatcher();
 
-  import Checkbox from "./Checkbox.svelte";
-  import DatePicker from "./DatePicker.svelte";
-  import SingleChoice from "./SingleChoice.svelte";
+  import Checkbox from "./inputs/Checkbox.svelte";
+  import DatePicker from "./inputs/DatePicker.svelte";
+  import SingleChoice from "./inputs/SingleChoice.svelte";
 
 
   const dateChanged = (event) => {
