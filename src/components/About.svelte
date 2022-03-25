@@ -21,7 +21,6 @@
                 },
                 styleWindow: {
                     border: '4px solid #4538D4',
-                    // boxShadow: 'inset 0 0 0 2px white, 0 0 0 2px white',
                     background: '#3D529A'
                 },
                 styleContent: {
@@ -31,7 +30,7 @@
                     borderRadius: 10,
                     boxShadow: '0 0 0 1px white',
                     color: 'white',
-                    background: '#4538D4'
+                    background: 'transparent'
                 },
                 transitionWindow: fade,
                 transitionWindowProps: {

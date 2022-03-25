@@ -524,7 +524,7 @@
       top: 50%;
       width: 1rem;
       height: 1px;
-      background: black;
+      background: white;
       transform-origin: center;
       transition: height 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
         background 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
