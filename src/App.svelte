@@ -4,7 +4,7 @@
 
 	import Form from "./components/Form.svelte";
 	import TextOutput from "./components/TextOutput.svelte";
-	import LanguageSelector from "./components/LanguageSelector.svelte";
+	import LanguageSelector from "./components/inputs/LanguageSelector.svelte";
 	import About from "./components/About.svelte";
 	import Modal from "./components/Modal.svelte";
 
@@ -78,17 +78,9 @@
       box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
 
-	#foreground-wave-gradient-color {
-		animation: pulse 1s infinite;
-	}
-
-	@keyframes pulse {
-		0% {
-			stop-color: #a24f02;
-		}
-
-		100% {
-			stop-color: #a20702;
-		}
-	}
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
 </style>
