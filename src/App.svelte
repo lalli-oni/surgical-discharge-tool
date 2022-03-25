@@ -64,6 +64,19 @@
 		background-attachment: scroll, scroll, fixed;
 		background-size: contain, contain, cover;
 	}
+	
+    ::-webkit-scrollbar {
+      width: 1em;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: white;
+    }
+
+    ::-webkit-scrollbar-track {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
 
 	#foreground-wave-gradient-color {
 		animation: pulse 1s infinite;

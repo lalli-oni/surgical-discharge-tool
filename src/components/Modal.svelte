@@ -440,7 +440,7 @@
             {/if}
           {/if}
           <div
-            class={(state.classContent) ? state.classContent + " m-4" : "m-4"}
+            class={(state.classContent) ? state.classContent + " m-8 mt-12" : "m-8 mt-12"}
             class:content={!unstyled}
             style={cssContent}
           >
@@ -478,7 +478,6 @@
   
     .window {
       position: relative;
-      width: 40rem;
       max-width: 100%;
       max-height: 100%;
       margin: 2rem auto;
@@ -489,9 +488,40 @@
   
     .content {
       position: relative;
-      padding: 1rem;
       max-height: calc(100vh - 4rem);
       overflow: auto;
+      /* Scrolling indicators */
+      --bgRGB: 61, 82, 154;
+      --bg: rgb(var(--bgRGB));
+      --bgTrans: rgba(var(--bgRGB), 0);
+      
+      --shadow: rgba(41, 50, 56, 0.5);
+      background:
+        linear-gradient(
+          var(--bg) 30%,
+          var(--bgTrans)
+        ) center top,
+        
+        linear-gradient(
+          var(--bgTrans), 
+          var(--bg) 70%
+        ) center bottom,
+        
+        radial-gradient(
+          farthest-side at 50% 0,
+          var(--shadow),
+          rgba(0, 0, 0, 0)
+        ) center top,
+        
+        radial-gradient(
+          farthest-side at 50% 100%,
+          var(--shadow),
+          rgba(0, 0, 0, 0)
+        ) center bottom;
+      
+      background-repeat: no-repeat;
+      background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+      background-attachment: local, local, scroll, scroll;
     }
   
     .close {
@@ -499,8 +529,8 @@
       box-sizing: border-box;
       position: absolute;
       z-index: 1000;
-      top: 1rem;
-      right: 3rem;
+      top: 0.9rem;
+      right: 1.75rem;
       margin: 0;
       padding: 0;
       width: 1.5rem;
@@ -567,24 +597,5 @@
     .close:focus,
     .close:active {
       outline: none;
-    }
-
-    ::-webkit-scrollbar {
-      width: 1em;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background-color: white;
-    }
-
-    ::-webkit-scrollbar-track {
-      border-radius: 10px;
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background-color: darkgrey;
-      outline: 1px solid slategrey;
     }
 </style>
