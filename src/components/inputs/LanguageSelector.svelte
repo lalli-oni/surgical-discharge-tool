@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { scale, fade } from 'svelte/transition';
-    import Svg from '../svg.svelte';
     export let languages;
     export let language = languages.english;
     let expanded: boolean = false;
@@ -19,16 +18,12 @@
 
 
 <div
-    class="flex flex-row justify-between items-center hover:cursor-pointer gap-2 group p-2"
+    class="flex flex-row justify-between items-center gap-2 group p-2"
     on:click={toggleVisibility} on:mouseenter={toggleVisibility} on:mouseleave={toggleVisibility}
     in:fade={{ delay: 500, duration: 600}}
 >
     <div>
-        <!-- <Svg id="selected-language" icon={language.meta.flag} label={language.id}
-            class="group-hover:shadow-orange-glow md:scale-125" 
-            boxWidth={640} boxHeight={480}
-        /> -->
-        <span class="font-bold text-white p-2">{language.meta.label}</span>
+        <span class="font-bold text-white p-2 hover:cursor-pointer">{language.meta.label}</span>
         {#if expanded === true}
         <!-- {#if true} -->
             <div
@@ -36,14 +31,7 @@
                 in:scale={{ duration: 300 }} out:fade={{ duration: 300, delay: 100 }}
             >
                 {#each languages.filter(lang => lang.meta.id !== language.meta.id) as languageOption}
-                    <!-- <Svg class="shadow-md hover:shadow-blue-100 m-1 hover:scale-125"
-                        icon={languageOption.meta.flag}
-                        id={languageOption.meta.id}
-                        label={languageOption.meta.id}
-                        boxWidth={640} boxHeight={480}
-                        on:svg-click={languageSelected}
-                    /> -->
-                    <span class="text-white m-2 hover:font-bold" on:click={() => languageSelected(languageOption.meta.id)}>{languageOption.meta.label}</span>
+                    <span class="text-white m-2 hover:font-bold hover:cursor-pointer" on:click={() => languageSelected(languageOption.meta.id)}>{languageOption.meta.label}</span>
                 {/each}
             </div>
         {/if}
