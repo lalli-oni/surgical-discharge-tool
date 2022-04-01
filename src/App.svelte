@@ -7,22 +7,31 @@
 	import LanguageSelector from "./components/inputs/LanguageSelector.svelte";
 	import About from "./components/About.svelte";
 	import Modal from "./components/Modal.svelte";
+	import Button from "./components/inputs/Button.svelte";
 
 	import { modal } from './store.js';
+	import Waves from "./components/Waves.svelte";
 
 	const textGenerator = useTextGenerator();
 	const selectionChanged = (event) => {
-		selection = event.detail;
+		if (!event.detail) {
+			dirty = false;
+			outputText = "";
+		}
+		dirty = true;
+		const selection = event.detail;
 		if (selection && language) outputText = textGenerator.generate(selection, language);
 	};
+	let resetSelection;
 
 	let language = languages.english;
+	let dirty = false;
 
-	let selection;
 	let outputText = "";
 </script>
 
 <div class="h-full w-full bg-pattern">
+	<!-- <Waves animated={false} count={2} /> -->
 	<div class="p-4 px:8 md:p-6 md:px-16 flex flex-col h-full">
 		<div class="grow-0 pb-6 md:mb-8 gap-8 md:gap-4 flex flex-row justify-between items-center">
 			<div>
@@ -37,8 +46,13 @@
 			</div>
 		</div>
 		<main class="flex flex-row gap-8 grow justify-evenly overflow-hidden">
-			<Form on:selection-changed={selectionChanged} labels={language} />
-			<TextOutput text={outputText} placeholder={language.instruction} />
+			<Form on:selection-changed={selectionChanged} labels={language} bind:resetSelection />
+			<div class="flex flex-col gap-2">
+				<div>
+					<Button label={language.buttons.clear} on:click={resetSelection()} disabled={!dirty} disabledTooltip="Yo, you need to do something first!" />
+				</div>
+				<TextOutput text={outputText} placeholder={language.messages.textOutputPlaceholder} />
+			</div>
 		</main>
 	</div>
 </div>
@@ -57,7 +71,6 @@
 	}
 
 	.bg-pattern {
-		/* background: linear-gradient(to bottom right, #0F01A7, black 50%), url("../background.svg"); */
 		background: url("../foreground-wave.svg") no-repeat, url("../background-wave.svg") no-repeat, linear-gradient(130.67deg, #0F01A7 -1.87%, #000000 79.27%);
 		background-position: right 0px bottom 0px, right 0px bottom 0px;
 		background-blend-mode: exclusion, exclusion, normal;

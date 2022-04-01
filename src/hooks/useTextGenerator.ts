@@ -19,22 +19,15 @@ export function useTextGenerator() {
 		});
 
 		let rhythmText = "";
-		console.log(selections.rhythms)
-		for (const [key, value] of Object.entries(selections.rhythms)) {
-			if (value === true && translation.output.rhythms[key]) rhythmText += "\n- " + translation.output.rhythms[key];
-		}
+		rhythmText += "\n- " + translation.output.rhythms[selections.rhythm.id];
 		if (rhythmText?.length > 0) text += "\n" + rhythmText;
 		
 		let rhythmtreatmentText = "";
-		for (const [key, value] of Object.entries(selections.rhythms.treatments)) {
-			if (value === true && translation.output[key]) rhythmtreatmentText += "\n- " + translation.output[key];
-		}
+		rhythmtreatmentText += "\n- " + translation.output[selections.rhythmTreatment.id];
 		if (rhythmtreatmentText?.length > 0) text += "\n" + rhythmtreatmentText;
 
 		let respiratoryText = "";
-		for (const [key, value] of Object.entries(selections.respitory)) {
-			if (value === true && translation.output[key]) respiratoryText += "\n- " + translation.output[key];
-		}
+		respiratoryText += "\n- " + translation.output.respiratory[selections.respiratory.id];
 		if (respiratoryText?.length > 0) text += "\n" + respiratoryText;
 
 		if (selections?.dischargeLocation?.label) {

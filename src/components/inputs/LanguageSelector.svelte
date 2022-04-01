@@ -31,7 +31,7 @@
                 in:scale={{ duration: 300 }} out:fade={{ duration: 300, delay: 100 }}
             >
                 {#each languages.filter(lang => lang.meta.id !== language.meta.id) as languageOption}
-                    <span class="text-white m-2 hover:font-bold hover:cursor-pointer" on:click={() => languageSelected(languageOption.meta.id)}>{languageOption.meta.label}</span>
+                    <span class="text-white m-2 hover:text-highlight-primary hover:cursor-pointer" on:click={() => languageSelected(languageOption.meta.id)}>{languageOption.meta.label}</span>
                 {/each}
             </div>
         {/if}

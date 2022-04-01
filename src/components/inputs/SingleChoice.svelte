@@ -1,12 +1,18 @@
+<script context="module" lang="ts">
+    export type Choice = {
+        id: string;
+        label: string;
+        icon?: string;
+    };
+</script>
+
 <script lang="ts">
-    export let choices: Array<any> = [];
-    export let selected: any;
+    export let choices: Array<{ id: string; label: string; icon?: string; }> = [];
+    export let selected: Choice;
 
     import CheckMark from "./CheckMark.svelte";
 
     const select = (choice) => selected = choices.find(c => c.id === choice);
-
-    $: if (typeof selected === "string") selected = choices.find(c => c?.id === selected);
 </script>
 
 {#each choices as choice}
