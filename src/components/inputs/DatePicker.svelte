@@ -13,14 +13,13 @@
     };
 </script>
 
-<!-- {@debug date} -->
-
 <div class="flex flex-row justify-between gap-2 items-baseline">
     <label class="text-white grow" for={id}>{label}</label>
     <input
         type="date"
         id={id}
         bind:value={date} on:input={dateSelected}
+        max={new Date().toISOString().split("T")[0]}
         class={`bg-transparent max-w-60% rounded-md text-white p-2 border border-brand-primary hover:border-highlight-primary shrink ${(date) ? "border-2" : "border"}`}
     />
 </div>
