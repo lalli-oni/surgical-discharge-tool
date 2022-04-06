@@ -4,14 +4,14 @@
         <div>
             <span class="text-highlight-primary text-xl font-semibold mb-2 mr-2">Úlfur</span>
             <span class="text-neutral-300 text-lg">Developer, Workplace Medic</span>
-            <p class="bio-text">Úlfur 'Nice' is considered a god by some tribes in the rural parts of the Scottish Higherlands. A man of mystery and mythical status, the Dalai Lama is to have said of him "His hugs, so warm and full of compassion to me as a human being. The exchange gave me an erection. An erection of love.".</p>
+            <p class="bio-text">Úlfur 'Nice' is considered a diety by select tribes in the rural parts of the Scottish Higherlands. A man of mystery and mythical status, the Dalai Lama is to have said of him "His hugs, so warm and full of compassion to me as a human being. He made me question my oath of celebacy".</p>
         </div>
     </div>
     <div class="flex flex-row gap-4 group">
         <div>
             <span class="name">Larus Thor</span>
             <span class="text-neutral-300 text-lg">Developer</span>
-            <p class="bio-text">Larus Thor grew up licking unsuspecting peoples elbows in the supermarket. Already at the age of 6 labelled a XZ class weirdo by experts from around the Polynesian peninsula.</p>
+            <p class="bio-text">Larus Thor grew up returning shopping carts thinking they were wayward unicorns. The subject of numerous medical journals around the world due to his ability to count in nanoseconds.</p>
         </div>
         <img src="photos/larus-thor-silly.png" alt="Larus Thor profile pic" />
     </div>
