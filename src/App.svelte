@@ -10,7 +10,6 @@
 	import Button from "./components/inputs/Button.svelte";
 
 	import { modal } from './store.js';
-	import Waves from "./components/Waves.svelte";
 
 	const textGenerator = useTextGenerator();
 	const selectionChanged = (event) => {
