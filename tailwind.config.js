@@ -1,5 +1,4 @@
 module.exports = {
-  content: [],
   theme: {
     extend: {
       spacing: {
@@ -17,12 +16,23 @@ module.exports = {
         'brand-primary': '#4538D4',
         'brand-lighter': '#3D529A',
         'highlight-primary': '#FFC700',
-        'highlight-secondary': '#f5c242'
+        'highlight-secondary': '#f5c242',
+        'highlight-light': '#fcce4e'
+      },
+      animation: {
+        'animate-ping-once': 'ping-once 3s cubic-bezier(0, 0, 0.2, 1)'
+      },
+      keyframes: {
+        'ping-once': {
+          '0%': { transform: 'scale(1);' },
+          '50%': { transform: 'scale(5);' },
+          '100%': { transform: 'scale(1);' },
+        }
       }
     },
   },
   plugins: [],
-  purge: {
+  content: {
       enabled: !process.env.ROLLUP_WATCH,
       content: ['./public/index.html', './src/**/*.svelte'],
       options: {

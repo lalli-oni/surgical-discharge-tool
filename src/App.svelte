@@ -12,7 +12,9 @@
 		if (selection && language) outputText = textGenerator.generate(selection, language);
 	};
 
+	let menuOpen: boolean;
 	let language = languages.english;
+	let dirty: boolean = false;
 
 	let selection;
 	let outputText = "";
@@ -25,11 +27,25 @@
 				<h1 class="text-white font-semibold text-3xl">{language.title}</h1>
 				<div class="text-blue-200 text=xl">{language.subtitle}</div>
 			</div>
-			<LanguageSelector bind:language languages={Object.values(languages)} />
+			<div class="flex flex-row items-baseline gap-4">
+				<Modal show={$modal}>
+					<About />
+				</Modal>
+				<LanguageSelector bind:language languages={Object.values(languages)} />
+				<!-- <MenuButton align="right" bind:open={menuOpen} /> -->
+			</div>
 		</div>
 		<main class="flex flex-row gap-8 grow justify-evenly overflow-hidden">
-			<Form on:selection-changed={selectionChanged} labels={language} />
-			<TextOutput text={outputText} />
+			<!-- <Modal show={$modal}>
+				<MenuBar sidebarOpen={menuOpen} />
+			</Modal> -->
+			<Form on:selection-changed={selectionChanged} labels={language} bind:resetSelection />
+			<div class="flex flex-col gap-2">
+				<div>
+					<Button label={language.buttons.clear} on:click={resetSelection()} disabled={!dirty} disabledTooltip="Yo, you need to do something first!" />
+				</div>
+				<TextOutput text={outputText} placeholder={language.messages.textOutputPlaceholder} />
+			</div>
 		</main>
 	</div>
 </div>
